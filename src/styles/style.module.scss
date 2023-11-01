@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap');
-@import './color.scss';
-@import './mixin.scss';
-
+@import './base.scss';
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -81,12 +79,11 @@ body {
   }
 
   .single_recipe {
-    display: flex;
+    @include flexCenter(row);
     position: relative;
     max-width: 100vw;
     padding-top: 6rem;
-    justify-content: center;
-    align-items: center;
+
     @include mainCard;
   }
 
@@ -116,10 +113,7 @@ body {
           .more_recipes_card_background {
             @include cardLayout;
             margin: 4px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            @include flexCenter(column);
             flex: 1;
             p {
               font-weight: 500;
