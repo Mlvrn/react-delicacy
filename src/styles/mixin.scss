@@ -1,0 +1,167 @@
+@import './color.scss';
+
+@mixin cardLayout {
+  background-color: $primary;
+  margin: 5px;
+  border-radius: 15px;
+}
+
+@mixin mainCard {
+  .container {
+    position: relative;
+    .card {
+      margin-left: 5.5rem;
+      width: 38rem;
+      height: 60vh;
+      border-radius: 10px;
+      z-index: 10;
+      display: flex;
+      .card_background {
+        @include cardLayout;
+        flex: 1;
+        h3 {
+          font-family: 'Archivo', sans-serif;
+          margin: 0;
+          padding: 0.75em 0.75em 0;
+          color: $text-primary;
+        }
+
+        .content {
+          padding: 0.5em 1em;
+          width: 65%;
+          p {
+            text-align: justify;
+            font-size: 13px;
+            margin: 0 0 2em 0;
+            overflow-y: scroll;
+            max-height: 7rem;
+            padding-right: 0.75em;
+          }
+          h3 {
+            color: $text-secondary;
+            padding: 0;
+          }
+          .ingredient {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 4rem;
+            padding: 1em 0;
+            .item {
+              display: flex;
+              flex: 1;
+              .ingredient_card {
+                width: 4rem;
+                height: 3rem;
+                display: flex;
+                .ingredient_card_background {
+                  background-color: $primary;
+                  margin: 3px;
+                  border-radius: 2px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  flex: 1;
+                  img {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    width: 30px;
+                    height: 30px;
+                  }
+                }
+              }
+              .item_description {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 0 0.3em;
+                h4 {
+                  font-size: 12px;
+                  margin: 0;
+                  font-weight: 500;
+                }
+                p {
+                  font-size: 10px;
+                  color: $text-secondary;
+                  margin: 0;
+                  font-weight: 500;
+                  overflow: hidden;
+                }
+              }
+            }
+          }
+          .button_container {
+            display: flex;
+            gap: 4rem;
+            justify-content: center;
+            .details {
+              width: fit-content;
+              padding: 0.5rem 4rem;
+            }
+            a {
+              background-color: $primary;
+              color: $button-color;
+              border: 1px solid $button-color;
+              border-radius: 4px;
+              padding: 0.5rem 1rem;
+              font-size: 12px;
+              font-weight: 500;
+              width: 8rem;
+              text-align: center;
+              text-decoration: none;
+              cursor: pointer;
+              &:hover {
+                color: $hover-color-primary;
+                border-color: $hover-color-primary;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 3rem;
+      left: 32rem;
+      z-index: 1;
+      width: 350px;
+      height: 350px;
+    }
+  }
+}
+
+@mixin moreRecipeCard {
+  .relative {
+    position: relative;
+    &:hover {
+      transform: scale(1.05);
+    }
+    .more_recipes_card {
+      width: 10rem;
+      height: 8rem;
+      display: flex;
+      border-radius: 10px;
+      .more_recipes_card_background {
+        @include cardLayout;
+        margin: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        flex: 1;
+        p {
+          font-weight: 500;
+          font-size: 15px;
+        }
+      }
+    }
+    img {
+      position: absolute;
+      border-radius: 50%;
+      bottom: 5rem;
+      left: 2rem;
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
