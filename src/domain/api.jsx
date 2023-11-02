@@ -5,7 +5,7 @@ export const callApi = async ({
   method,
   headers = {},
   params = {},
-  data = {},
+  data,
 }) => {
   const baseURL = 'https://www.themealdb.com/api/json/v1/1';
 
